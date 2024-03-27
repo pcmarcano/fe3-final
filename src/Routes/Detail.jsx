@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ThemeContext from "../context";
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 const Detail = () => {
   //Tema
