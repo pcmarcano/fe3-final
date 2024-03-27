@@ -10,6 +10,7 @@ import Contact from './Routes/Contact'
 import ThemeContext, { themes } from "./context"; //Theme
 
 function App() {
+  //Tema
   const [theme, setTheme] = useState(themes.light);
   const cambiarTema = () => {
     setTheme(theme === themes.light ? themes.dark : themes.light);

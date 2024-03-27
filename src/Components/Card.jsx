@@ -7,6 +7,7 @@ const Card = ({ name, username, id }) => {
   //Tema
   const { theme } = useContext(ThemeContext);
   
+  //Fav
   const addFav = () => {
     const favoritos = JSON.parse(localStorage.getItem('favoritos') || []); //Uncaught SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
     favoritos.push ({name, username, id})
