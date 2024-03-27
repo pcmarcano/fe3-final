@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Card from "../Components/Card";
+import ThemeContext from "../context";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
+  //Tema
+  const { theme } = useContext(ThemeContext);
 
+  const [favDentistas, setFavDentistas] = useState([])
+  console.log("favoritos");
+  useEffect (() => {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
+    setFavDentistas(favoritos)
+  },[])
+  
   return (
     <>
       <h1>Dentists Favs</h1>
-      <div className="card-grid">
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
+      <div className="card-grid" style={{color: theme.font, backgroundColor: theme.backgroundColor}}>
+        {favDentistas.map((dentista) => (
+          <Card
+            key = {dentista.id}
+            name = {dentista.name}
+            username = {dentista.username}
+            id = {dentista.id}
+          />
+        ))}
       </div>
     </>
   );
