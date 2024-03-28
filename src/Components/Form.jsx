@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 
-
 const Form = () => {
   const [usuario, setUsuario] = useState({
     nombre: "",

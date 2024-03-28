@@ -9,14 +9,14 @@ const Home = () => {
   const [dentista, setDentista] = useState([]);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
-      .then((responce) => responce.json())
+      .then((response) => response.json())
       .then((data) => setDentista(data));
   }, []);
 
   
   return (
     <main className=''>
-      <h1>Lista de dentistas</h1>
+      <h1>Home</h1>
       <div
         className='card-grid'
         style={{ color: theme.font, backgroundColor: theme.backgroundColor }}

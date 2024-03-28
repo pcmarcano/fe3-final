@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Form from '../Components/Form'
 import ThemeContext from "../context";
-
+import "../index.css"
 
 const Contact = () => {
     //Tema

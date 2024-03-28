@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Card from "../Components/Card";
 import ThemeContext from "../context";
 
+
 const Favs = () => {
   //Tema
   const { theme } = useContext(ThemeContext);

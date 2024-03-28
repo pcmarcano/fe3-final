@@ -9,18 +9,17 @@ const Card = ({ name, username, id }) => {
   
   //Fav
   const addFav = () => {
-    const favoritos = JSON.parse(localStorage.getItem('favoritos') || []); //Uncaught SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+  const favoritos = JSON.parse(localStorage.getItem('favoritos') || []); //Uncaught SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
     favoritos.push ({name, username, id})
     localStorage.setItem('favoritos', JSON.stringify(favoritos))
   }
 
   return (
     <div className="card" style={{color: theme.font, backgroundColor: theme.backgroundColor}}>
-      {/**<img src={item.image} alt="" /> */}
-      <h2>{name}</h2>
-      <h2>{username}</h2>
-      <button onClick={addFav} className="favButton">Add Fav</button>
-      <Link to={`/dentist/${id}`}>Ver detalles</Link>
+      {/* <img  src="/images/doctor.jpg" alt="" /> */}
+      <Link to={`/dentist/${id}`}><p>{name}</p></Link>   
+      <p>{username}</p>
+      <button onClick={addFav} className="favButton">⭐</button>
     </div>
   );
 };
