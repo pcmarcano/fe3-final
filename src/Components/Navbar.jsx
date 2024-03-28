@@ -15,7 +15,7 @@ const Navbar = () => {
       <Link to = '/Contact'> Contacto </Link>
 
       {/* Cambio de tema */}
-      <button onClick={handleChangeTheme} style={{color: theme.font, backgroundColor: theme.backgroundColor}}>🌙</button>
+      <button onClick={handleChangeTheme} style={{color: theme.font, backgroundColor: theme.backgroundColor}}>🌙 ☀️</button>
     </nav>
   )
 }

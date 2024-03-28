@@ -17,8 +17,8 @@ const Card = ({ name, username, id }) => {
   return (
     <div className="card" style={{color: theme.font, backgroundColor: theme.backgroundColor}}>
       {/* <img  src="/images/doctor.jpg" alt="" /> */}
-      <Link to={`/dentist/${id}`}><p>{name}</p></Link>   
-      <p>{username}</p>
+      <Link to={`/dentist/${id}`}>{name}</Link>   
+      {username}
       <button onClick={addFav} className="favButton">⭐</button>
     </div>
   );

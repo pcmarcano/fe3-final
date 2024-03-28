@@ -39,7 +39,7 @@ const Detail = () => {
             <tr>
               <td>{dentista.email}</td>
               <td>{dentista.phone}</td>
-              <td>{dentista.website}</td>
+              <td><a href={dentista.website} target="_blank" rel="noopener noreferrer">{dentista.website}</a></td>
             </tr>
           </tbody>
         </table>
