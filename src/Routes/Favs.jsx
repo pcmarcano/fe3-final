@@ -1,44 +1,23 @@
-import React, { useEffect, useContext, useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import Card from "../Components/Card";
 import { ThemeContext } from "../Theme";
+import {favRedu, agrFav, quiFav} from '../Reducers/FavReducer'
 
-//Favorito Reducer NO FUNCIONO PONERLO EN OTRO ARCHIVO
-const reducer = (state, action) => {
-  switch (action.tipo) {
-    case "AGREGAR":
-      return [...state, action.payload];
-    case "QUITAR":
-      return state.filter((dentista) => dentista.id !== action.payload);
-    case "CARGAR":
-      return action.payload;
-    default:
-      return state;
-  }
-};
 
 const Favs = () => {
   //Tema
   const { theme } = useContext(ThemeContext);
 
   //Favorito
-  const [favDentistas, dispatch] = useReducer(reducer, []);
-  //Cargar
-  useEffect(() => {
-    const storedFavs = JSON.parse(localStorage.getItem("favDentistas")) || []
-    dispatch({ tipo: "CARGAR", payload: storedFavs });
-  }, []);
-  //Revolver
-  useEffect(() => {
-    localStorage.setitem("favDentistas", JSON.stringify(favDentistas))
-  }, [favDentistas]);
+  const [favDentistas, dispatch] = useReducer (favRedu, [])
   //Agregar
-  const agrFavDentista = (dentista) => {
-    dispatch({ tipo: "AGREGAR", payload: dentista });
-  };
+  const handleAgrFav = (dentista) => {
+    dispatch(agrFav(dentista))
+  }
   //Quitar
-  const quiFavDentista = (id) => {
-    dispatch({ tipo: "QUITAR", payload: id });
-  };
+  const handleQuiFav = (id) => {
+    dispatch(quiFav(id))
+  }
 
   return (
     <>
@@ -49,13 +28,13 @@ const Favs = () => {
       >
         {favDentistas.map((dentista) => (
           <Card
-            key =            {dentista.id}
-            name =           {dentista.name}
-            username =       {dentista.username}
-            id =             {dentista.id}
-            esFavorito =     {true}
-            agrFavDentista = {agrFavDentista}
-            quiFavDentista = {quiFavDentista}
+            key =         {dentista.id}
+            name =        {dentista.name}
+            username =    {dentista.username}
+            id =          {dentista.id}
+            esFavorito =  {true}
+            agrFav =      {handleAgrFav}
+            quiFav =      {handleQuiFav}
           />
         ))}
       </div>

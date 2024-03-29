@@ -2,29 +2,41 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../Theme";
 import { Link } from "react-router-dom";
 
-
-const Card = ({ name, username, id, esFavorito, agrFavDentista, quiFavDentista }) => {
+const Card = ({
+  name,
+  username,
+  id,
+  esFavorito,
+  agrFav,
+  quiFav,
+}) => {
   //Tema
   const { theme } = useContext(ThemeContext);
-  
+
   //Favoritos
-  const dentista = { name, username, id }
   const addFav = () => {
     if (esFavorito) {
-      quiFavDentista(id)
-    } else{
-      agrFavDentista(dentista)
+      quiFav(id)
+    } else {
+      agrFav({ name, username, id })
     }
-  }
+  };
 
   return (
-    <div className="card" style={{color: theme.font, backgroundColor: theme.background}}>
-      {<img width = {200} src="/images/doctor.jpg" alt="" />}
-      <Link to={`/dentist/${id}`} style={{color: theme.font, backgroundColor: theme.background}}>{name}</Link>   
+    <div className='card' style={{ color: theme.font }}>
+      {<img width={200} src='/images/doctor.jpg' alt='' />}
+      <Link
+        to={`/dentist/${id}`}
+        style={{ color: theme.font, backgroundColor: theme.background }}
+      >
+        {name}
+      </Link>
       {username}
-      <button onClick={addFav} className="favButton">{esFavorito ? "⚝" : "⭐"}</button>
+      <button onClick={addFav} className='favButton'>
+        {esFavorito ? "⚝" : "⭐"}
+      </button>
     </div>
   );
 };
 
-export default Card; 
+export default Card;
