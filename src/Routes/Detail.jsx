@@ -23,7 +23,7 @@ const Detail = () => {
   return (
     <>
       <div
-        style={{ color: theme.font, backgroundColor: theme.backgroundColor }}
+        style={{ color: theme.font, backgroundColor: theme.background }}
       >
         <h1>Detalles </h1>
         <table>

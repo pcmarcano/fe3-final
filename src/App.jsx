@@ -6,13 +6,15 @@ import Home from "./Routes/Home";
 import Detail from './Routes/Detail'
 import Favs from './Routes/Favs'
 import Contact from './Routes/Contact'
+import { ThemeContext } from "./Theme";
 
 
 function App() {
   //Tema
+const { theme } = useContext(ThemeContext);
   
   return (
-      <div className='App'>
+      <div className='App'  style={{color: theme.font, backgroundColor: theme.background}}>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

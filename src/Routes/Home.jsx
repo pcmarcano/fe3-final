@@ -15,7 +15,7 @@ const Home = () => {
 
   
   return (
-    <main className='' style={{ color: theme.font, backgroundColor: theme.backgroundColor }}>
+    <main className=''>
       <h1>Home</h1>
       <div
         className='card-grid'

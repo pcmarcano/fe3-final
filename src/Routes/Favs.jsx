@@ -45,7 +45,7 @@ const Favs = () => {
       <h1>Dentistas Favoritos</h1>
       <div
         className='card-grid'
-        style={{ color: theme.font, backgroundColor: theme.backgroundColor }}
+        style={{ color: theme.font, backgroundColor: theme.background }}
       >
         {favDentistas.map((dentista) => (
           <Card

@@ -18,9 +18,9 @@ const Card = ({ name, username, id, esFavorito, agrFavDentista, quiFavDentista }
   }
 
   return (
-    <div className="card" style={{color: theme.font, backgroundColor: theme.backgroundColor}}>
+    <div className="card" style={{color: theme.font, backgroundColor: theme.background}}>
       {<img width = {200} src="/images/doctor.jpg" alt="" />}
-      <Link to={`/dentist/${id}`}>{name}</Link>   
+      <Link to={`/dentist/${id}`} style={{color: theme.font, backgroundColor: theme.background}}>{name}</Link>   
       {username}
       <button onClick={addFav} className="favButton">{esFavorito ? "⚝" : "⭐"}</button>
     </div>

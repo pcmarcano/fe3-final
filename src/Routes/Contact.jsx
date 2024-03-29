@@ -7,7 +7,7 @@ const Contact = () => {
     const { theme } = useContext(ThemeContext);
 
   return (
-    <div style={{color: theme.font, backgroundColor: theme.backgroundColor}}>
+    <div style={{color: theme.font, backgroundColor: theme.background}}>
       <h2>Want to know more?</h2>
       <p>Send us your questions and we will contact you</p>
       <Form/>

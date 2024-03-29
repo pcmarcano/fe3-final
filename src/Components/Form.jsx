@@ -24,18 +24,18 @@ const Form = () => {
   };
 
   return (
-    <div style={{ color: theme.font, backgroundColor: theme.backgroundColor }}>
+    <div >
       <h4>Usuario: {usuario.nombre}</h4>
       {!show && (
         <form onSubmit={handleSubmit}>
           <label>Nombre: </label>
-          <input type='text' 
+          <input type='text' style={{ color: theme.font, backgroundColor: theme.background }}
           onChange={({ target }) =>
               setUsuario({ ...usuario, nombre: target.value })
             }
           />
           <label>Correo: </label>
-          <input type='text'
+          <input type='text' style={{ color: theme.font, backgroundColor: theme.background }}
             onChange={(event) =>
               setUsuario({ ...usuario, correo: event.target.value })
             }
