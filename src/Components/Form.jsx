@@ -1,6 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { ThemeContext } from "../Theme";
 
 const Form = () => {
+  //Tema
+  const { theme } = useContext(ThemeContext);
+
   const [usuario, setUsuario] = useState({
     nombre: "",
     correo: "",
@@ -20,7 +24,7 @@ const Form = () => {
   };
 
   return (
-    <div >
+    <div style={{ color: theme.font, backgroundColor: theme.backgroundColor }}>
       <h4>Usuario: {usuario.nombre}</h4>
       {!show && (
         <form onSubmit={handleSubmit}>

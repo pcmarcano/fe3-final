@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import ThemeContext from "../context";
+import { ThemeContext } from "../Theme";
 import axios from "axios";
 
 const Detail = () => {
@@ -39,7 +39,7 @@ const Detail = () => {
             <tr>
               <td>{dentista.email}</td>
               <td>{dentista.phone}</td>
-              <td><a href={dentista.website} target="_blank" rel="noopener noreferrer">{dentista.website}</a></td>
+              <td>{dentista.website}</td>
             </tr>
           </tbody>
         </table>

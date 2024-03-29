@@ -1,27 +1,30 @@
 import React, { useContext } from "react";
-import ThemeContext from "../context";
+import { ThemeContext } from "../Theme";
 import { Link } from "react-router-dom";
 
 
-const Card = ({ name, username, id }) => {
+const Card = ({ name, username, id, esFavorito, agrFavDentista, quiFavDentista }) => {
   //Tema
   const { theme } = useContext(ThemeContext);
   
-  //Fav
+  //Favoritos
+  const dentista = { name, username, id }
   const addFav = () => {
-  const favoritos = JSON.parse(localStorage.getItem('favoritos') || []); //Uncaught SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
-    favoritos.push ({name, username, id})
-    localStorage.setItem('favoritos', JSON.stringify(favoritos))
+    if (esFavorito) {
+      quiFavDentista(id)
+    } else{
+      agrFavDentista(dentista)
+    }
   }
 
   return (
     <div className="card" style={{color: theme.font, backgroundColor: theme.backgroundColor}}>
-      {/* <img  src="/images/doctor.jpg" alt="" /> */}
+      {<img width = {200} src="/images/doctor.jpg" alt="" />}
       <Link to={`/dentist/${id}`}>{name}</Link>   
       {username}
-      <button onClick={addFav} className="favButton">⭐</button>
+      <button onClick={addFav} className="favButton">{esFavorito ? "⚝" : "⭐"}</button>
     </div>
   );
 };
 
-export default Card;
+export default Card; 

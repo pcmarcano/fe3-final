@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import { Routes, Route } from "react-router-dom";
@@ -7,17 +7,11 @@ import Detail from './Routes/Detail'
 import Favs from './Routes/Favs'
 import Contact from './Routes/Contact'
 
-import ThemeContext, { themes } from "./context"; //Theme
 
 function App() {
   //Tema
-  const [theme, setTheme] = useState(themes.light);
-  const cambiarTema = () => {
-    setTheme(theme === themes.light ? themes.dark : themes.light);
-  };
-
+  
   return (
-    <ThemeContext.Provider value={{ theme, cambiarTema }}>
       <div className='App'>
         <Navbar />
         <Routes>
@@ -29,8 +23,8 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </ThemeContext.Provider>
   );
+
 }
 
 export default App;

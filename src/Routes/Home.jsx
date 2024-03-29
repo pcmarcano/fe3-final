@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import Card from "../Components/Card";
-import ThemeContext from "../context";
+import { ThemeContext } from "../Theme";
 
 const Home = () => {
   //Tema
-  const { theme } = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext)
 
   const [dentista, setDentista] = useState([]);
   useEffect(() => {
@@ -15,11 +15,10 @@ const Home = () => {
 
   
   return (
-    <main className=''>
+    <main className='' style={{ color: theme.font, backgroundColor: theme.backgroundColor }}>
       <h1>Home</h1>
       <div
         className='card-grid'
-        style={{ color: theme.font, backgroundColor: theme.backgroundColor }}
       >
         {dentista.map((dentista) => (
           <Card
