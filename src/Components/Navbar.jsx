@@ -5,15 +5,31 @@ import { ThemeContext, themes } from "../Theme";
 const Navbar = () => {
   //Tema
   const { toggleTheme, theme } = useContext(ThemeContext);
-  
-  //Favorito
 
   return (
-    <div style={{ color: theme.font, backgroundColor: theme.background }}>
+    <div >
       <nav className=''>
-        <Link to='/' style={{ color: theme.font, backgroundColor: theme.background }}> Home </Link>
-        <Link to='/Favs' style={{ color: theme.font, backgroundColor: theme.background }}> Destacados </Link>
-        <Link to='/Contact' style={{ color: theme.font, backgroundColor: theme.background }}> Contacto </Link>
+        <Link
+          to='/'
+          style={{ color: theme.font, backgroundColor: theme.background }}
+        >
+          {" "}
+          Home{" "}
+        </Link>
+        <Link
+          to='/Favs'
+          style={{ color: theme.font, backgroundColor: theme.background }}
+        >
+          {" "}
+          Destacados{" "}
+        </Link>
+        <Link
+          to='/Contact'
+          style={{ color: theme.font, backgroundColor: theme.background }}
+        >
+          {" "}
+          Contacto{" "}
+        </Link>
         <button onClick={toggleTheme}>
           {theme === themes.light ? "🌙" : "☀️"}{" "}
         </button>

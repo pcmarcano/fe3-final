@@ -19,8 +19,8 @@ const { theme } = useContext(ThemeContext);
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Contact' element={<Contact/>} />
-          <Route path='/dentist/:id'  element={<Detail/>} />
-          <Route path='/Favs'    element={<Favs/>} />
+          <Route path='/dentist/:id' element={<Detail/>} />
+          <Route path='/Favs' element={<Favs/>} />
           <Route path='*' element={<h1>... Ruta no encontrada ...</h1>} />
         </Routes>
         <Footer />

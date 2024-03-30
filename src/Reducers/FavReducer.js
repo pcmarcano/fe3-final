@@ -24,20 +24,3 @@ export const quiFav = (id) => {
   localStorage.setItem('favDentistas', JSON.stringify(actFav))
   return{type: "QUITAR", payload: id}
 };
-//Cargar
-/* useEffect(() => {
-  const storedFavs = JSON.parse(localStorage.getItem("favDentistas")) || []
-  dispatch({ type: "CARGAR", payload: storedFavs });
-}, []);
- */
-
-
-
-//Favorito
-/* const [favDentistas, dispatch] = useReducer(reducer, []);
-
-//Revolver
-useEffect(() => {
-  localStorage.setitem("favDentistas", JSON.stringify(favDentistas))
-}, [favDentistas]);
- */

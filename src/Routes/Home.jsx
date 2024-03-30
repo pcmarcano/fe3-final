@@ -1,11 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../Components/Card";
-import { ThemeContext } from "../Theme";
 
 const Home = () => {
-  //Tema
-  const {theme} = useContext(ThemeContext)
-
   const [dentista, setDentista] = useState([]);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")

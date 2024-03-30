@@ -52,12 +52,6 @@ const Form = () => {
       <hr />
     </div>
 
-
-
- /*    <div>
-      <form>
-      </form>
-    </div> */
   );
 };
 

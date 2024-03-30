@@ -7,11 +7,13 @@ const Detail = () => {
   //Tema
   const { theme } = useContext(ThemeContext);
 
+  //Detalle
   const [dentista, setDentista] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    axios(`https://jsonplaceholder.typicode.com/users/` + id).then((res) =>
+    axios(`https://jsonplaceholder.typicode.com/users/` + id)
+    .then((res) =>
       setDentista(res.data)
     );
   }, [id]);
