@@ -14,13 +14,25 @@ const Card = ({
   const { theme } = useContext(ThemeContext);
 
   //Favoritos
-  const addFav = () => {
+
+  const addFav = (e) => {
+    e.preventDefault();
+    const favCard = { name, username, id };
+    const existingFavs = JSON.parse(localStorage.getItem('favs')) || [];
+    const newFavs = [...existingFavs, favCard];
+    localStorage.setItem('favs', JSON.stringify(newFavs));
+    console.log('Favoritos:', newFavs);
+  };
+
+
+
+/*   const addFav = () => {
     if (esFavorito) {
       quiFav(id)
     } else {
       agrFav({ name, username, id })
     }
-  };
+  }; */
 
   return (
     <div className='card' style={{ color: theme.font }}>

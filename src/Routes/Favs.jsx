@@ -1,23 +1,24 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext } from "react";
 import Card from "../Components/Card";
 import { ThemeContext } from "../Theme";
-import {favRedu, agrFav, quiFav} from '../Reducers/FavReducer'
-
+/* import {favRedu, agrFav, quiFav} from '../Reducers/FavReducer'
+ */
 
 const Favs = () => {
   //Tema
   const { theme } = useContext(ThemeContext);
 
-  //Favorito
-  const [favDentistas, dispatch] = useReducer (favRedu, [])
+//Favorito
+  const favDentistas = JSON.parse(localStorage.getItem("favs")) || []
+/*   const [favDentistas, dispatch] = useReducer (favRedu, []) */
   //Agregar
-  const handleAgrFav = (dentista) => {
+/*   const handleAgrFav = (dentista) => {
     dispatch(agrFav(dentista))
-  }
+  } */
   //Quitar
-  const handleQuiFav = (id) => {
+/*   const handleQuiFav = (id) => {
     dispatch(quiFav(id))
-  }
+  } */
 
   return (
     <>
@@ -33,8 +34,8 @@ const Favs = () => {
             username =    {dentista.username}
             id =          {dentista.id}
             esFavorito =  {true}
-            agrFav =      {handleAgrFav}
-            quiFav =      {handleQuiFav}
+/*             agrFav =      {handleAgrFav}
+            quiFav =      {handleQuiFav} */
           />
         ))}
       </div>

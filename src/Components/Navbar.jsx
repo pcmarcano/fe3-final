@@ -5,6 +5,8 @@ import { ThemeContext, themes } from "../Theme";
 const Navbar = () => {
   //Tema
   const { toggleTheme, theme } = useContext(ThemeContext);
+  
+  //Favorito
 
   return (
     <div style={{ color: theme.font, backgroundColor: theme.background }}>
